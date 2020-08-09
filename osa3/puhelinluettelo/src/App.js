@@ -83,6 +83,9 @@ const App = () => {
         .catch((error) => {
           console.log("Create new person error:", error);
           setErrorMessage(error.response.data.error);
+          setTimeout(() => {
+            setErrorMessage(null);
+          }, 5000);
         });
     }
   };
