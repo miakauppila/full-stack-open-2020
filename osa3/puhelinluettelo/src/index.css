@@ -32,3 +32,12 @@ ul {
   padding: 10px;
   margin-bottom: 10px;
 }
+
+label {
+  font-size: 20px;
+}
+
+.collection-item {
+  font-size: 16px;
+  line-height: 40px !important;
+}

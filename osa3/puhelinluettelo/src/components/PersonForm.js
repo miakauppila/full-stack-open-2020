@@ -4,24 +4,26 @@ const PersonForm = (props) => {
   return (
     <div>
       <form onSubmit={props.addNew}>
-        <div>
-          name:
+        <div className="input-field">
+        <i className="material-icons prefix">account_circle</i>
           <input
             required
+            placeholder="First and last name"
             value={props.newName}
             onChange={props.onChangeNameHandler}
           />
         </div>
-        <div>
-          number:
+        <div className="input-field">
+        <i className="material-icons prefix">phone</i>
           <input
             required
+            placeholder="Phone number"
             value={props.newNumber}
             onChange={props.onChangeNumberHandler}
           />
         </div>
         <div>
-          <button type="submit">add</button>
+          <button className="waves-effect waves-light btn" type="submit">add</button>
         </div>
       </form>
     </div>

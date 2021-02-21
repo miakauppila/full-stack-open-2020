@@ -1,7 +1,7 @@
 import axios from "axios";
 const baseUrl = "/api/persons";
 
-//get data from json server with axios
+//fetch data from backend with axios (proxy is set in package.json)
 //functions return response data = promise
 
 const getAll = () => {

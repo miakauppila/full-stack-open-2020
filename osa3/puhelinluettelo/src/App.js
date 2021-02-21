@@ -16,7 +16,7 @@ const App = () => {
 
   //useEffect runs first once at start, updates state and component rerenders
   useEffect(() => {
-    console.log("effect");
+    console.log("useEffect runs");
     axiosService.getAll().then((receivedPersons) => {
       setPersons(receivedPersons);
     });
@@ -33,7 +33,7 @@ const App = () => {
       (person) => person["name"].toLowerCase() === newName.toLowerCase()
     );
     if (personToSearch) {
-      //window.alert(`${newName} is already added to phonebook`);
+      //when window confirm returns true
       if (
         window.confirm(
           `${newName} is already added to the phonebook, replace the old number with a new one?`
@@ -136,11 +136,11 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h2>Phonebook</h2>
-      <Notification message={message} errorMessage={errorMessage} />
+    <div className="container">
+      <h2 className="center">Phonebook</h2>
       <div>
-        Filter shown with <input onChange={onChangeFilterHandler} />
+        <label htmlFor="filter">Filter shown contacts with:</label>
+        <input type="text" id="filter" placeholder="Type here" onChange={onChangeFilterHandler} />
       </div>
       <h3>Add new</h3>
       <PersonForm
@@ -151,6 +151,7 @@ const App = () => {
         onChangeNumberHandler={onChangeNumberHandler}
       />
       <h3>Numbers</h3>
+      <Notification message={message} errorMessage={errorMessage} />
       <Persons personsToShow={personsToShow} onDelete={onDeleteHandler} />
     </div>
   );
