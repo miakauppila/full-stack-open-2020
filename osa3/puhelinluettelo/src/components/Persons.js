@@ -3,11 +3,17 @@ import React from "react";
 const Persons = (props) => {
   const { personsToShow, onDelete } = props;
   return (
-    <ul className="collection">
-      {personsToShow.map((person) => (
-        <Person key={person.id} person={person} onDelete={onDelete} />
-      ))}
-    </ul>
+    personsToShow.length ? (
+      <ul className="collection">
+        {personsToShow.map((person) => (
+          <Person key={person.id} person={person} onDelete={onDelete} />
+        ))}
+      </ul>
+    ) : (
+        <div className="empty"> 
+        No phone numbers saved in the phonebook.
+        </div>
+      )
   );
 };
 
@@ -17,7 +23,7 @@ const Person = ({ person, onDelete }) => {
       {person.name} &#x25B6; {person.number}{" "}
       <button
         type="button"
-        name="Delete button"
+        id="deleteBtn"
         onClick={() => {
           onDelete(person.id);
         }}

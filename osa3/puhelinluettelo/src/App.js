@@ -3,6 +3,7 @@ import PersonForm from "./components/PersonForm";
 import Persons from "./components/Persons";
 import axiosService from "./services/persons";
 import Notification from "./components/Notification";
+import Input from "./components/Input";
 
 const App = () => {
   //initial state must be an empty array
@@ -22,6 +23,7 @@ const App = () => {
     });
   }, []);
   console.log("render", persons.length, "persons");
+  console.log("persons model:", persons[0]);
 
   const addNew = (e) => {
     e.preventDefault();
@@ -139,8 +141,8 @@ const App = () => {
     <div className="container">
       <h2 className="center">Phonebook</h2>
       <div>
-        <label htmlFor="filter">Filter shown contacts with:</label>
-        <input type="text" id="filter" placeholder="Type here" onChange={onChangeFilterHandler} />
+      <label htmlFor="filter">Filter shown contacts by:</label>
+      <Input inputId={"filter"} handleChange={onChangeFilterHandler} />
       </div>
       <h3>Add new</h3>
       <PersonForm

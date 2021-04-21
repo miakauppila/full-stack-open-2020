@@ -2,7 +2,8 @@
 
 - Part 3 of the Full stack Open course 
 - This folder holds the frontend of the Phonebook application  
-- Tech: React.js, Axios, Materialize CSS
+- Tech: React.js, Axios, Materialize CSS  
+- Jest & Enzyme used for unit testing
 
 ## View the application: 
 http://lit-gorge-09408.herokuapp.com/
